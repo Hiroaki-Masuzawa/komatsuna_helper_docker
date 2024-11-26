@@ -38,15 +38,15 @@ class CameraTFPublisher:
         self.br.sendTransform((self.pos_x, self.pos_y, self.pos_z),
                 [self.rot_x, self.rot_y, self.rot_z, self.rot_w],
                 rospy.Time.now(),
-                self.camera_frame,
-                self.global_fix_frame)
+                self.global_fix_frame,
+                self.camera_frame)
 
     def setpose(self, req):
         now = rospy.Time.now()
         self.listener.waitForTransform(self.camera_frame, self.ar_marker_frame, now, rospy.Duration(5.0))
         tf1 = self.listener.lookupTransform(self.camera_frame,  self.ar_marker_frame, now)
-        self.pos_x, self.pos_y, self.pos_z = -tf1[0][0], -tf1[0][1], -tf1[0][2]
-        self.rot_x, self.rot_y, self.rot_z, self.rot_w = -tf1[1][0], -tf1[1][1], -tf1[1][2], tf1[1][3]
+        self.pos_x, self.pos_y, self.pos_z = tf1[0][0], tf1[0][1], tf1[0][2]
+        self.rot_x, self.rot_y, self.rot_z, self.rot_w = tf1[1][0], tf1[1][1], tf1[1][2], tf1[1][3]
         print(self.pos_x, self.pos_y, self.pos_z)
         print(self.rot_x, self.rot_y, self.rot_z, self.rot_w)
         return TriggerResponse(True, "")

@@ -14,3 +14,7 @@ RUN apt update -q -qq && \
     apt clean && \
     rm -rf /var/lib/apt/lists/
 RUN sed -i.bk -e '6i if [ -e /catkin_ws/devel/setup.bash ]; then' -e '6i source /catkin_ws/devel/setup.bash' -e '6i fi' /ros_entrypoint.sh
+RUN apt update -q -qq && \
+    DEBIAN_FRONTEND=noninteractive apt install -q -qq -y ros-noetic-rviz && \
+    apt clean && \
+    rm -rf /var/lib/apt/lists/
