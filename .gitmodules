@@ -2,3 +2,18 @@
 	path = catkin_ws/src/ar_track_alver
 	url = https://github.com/ros-perception/ar_track_alvar.git
 	branch = noetic-devel
+[submodule "catkin_ws/src/open_manipulator"]
+	path = catkin_ws/src/open_manipulator
+	url = https://github.com/ROBOTIS-GIT/open_manipulator.git
+	branch = noetic-devel
+[submodule "catkin_ws/src/open_manipulator_msgs"]
+	path = catkin_ws/src/open_manipulator_msgs
+	url = https://github.com/ROBOTIS-GIT/open_manipulator_msgs.git
+	branch = noetic-devel
+[submodule "catkin_ws/src/open_manipulator_simulations"]
+	path = catkin_ws/src/open_manipulator_simulations
+	url = https://github.com/ROBOTIS-GIT/open_manipulator_simulations.git
+	branch = noetic-devel
+[submodule "catkin_ws/src/open_manipulator_dependencies"]
+	path = catkin_ws/src/open_manipulator_dependencies
+	url = https://github.com/ROBOTIS-GIT/open_manipulator_dependencies.git
