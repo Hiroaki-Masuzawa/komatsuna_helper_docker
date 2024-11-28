@@ -18,3 +18,14 @@ RUN apt update -q -qq && \
     DEBIAN_FRONTEND=noninteractive apt install -q -qq -y ros-noetic-rviz && \
     apt clean && \
     rm -rf /var/lib/apt/lists/
+RUN apt update -q -qq && \
+    DEBIAN_FRONTEND=noninteractive apt install -q -qq -y ros-noetic-ros-controllers ros-noetic-gazebo* ros-noetic-moveit* ros-noetic-industrial-core \
+    ros-noetic-dynamixel-sdk ros-noetic-dynamixel-workbench* \
+    ros-noetic-robotis-manipulator && \
+    apt clean && \
+    rm -rf /var/lib/apt/lists/
+RUN apt update -q -qq && \
+    DEBIAN_FRONTEND=noninteractive apt install -q -qq -y ros-noetic-robot-state-publisher && \
+    apt clean && \
+    rm -rf /var/lib/apt/lists/
+    

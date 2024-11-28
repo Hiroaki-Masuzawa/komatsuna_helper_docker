@@ -12,5 +12,5 @@
     
   <node name="pub_camera_pose" pkg="komatsuna_helper" type="pub_camera_pose.py" output="screen" />
   <node name="manual_point" pkg="komatsuna_helper" type="manual_point.py" output="screen" />
-  <node pkg="tf" type="static_transform_publisher" name="stage_to_base_link" args="-0.5 0 0 0 0 0 stage base_link 10" />
+  <node pkg="tf" type="static_transform_publisher" name="stage_to_base_link" args="-0.5 0 0 0 0 0 stage world 10" />
 </launch>
